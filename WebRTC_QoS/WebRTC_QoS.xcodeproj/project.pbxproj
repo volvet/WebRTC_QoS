@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3EAB2E61DAA915600D03621 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EAB2E51DAA915600D03621 /* main.m */; };
+		D3EAB2E61DAA915600D03621 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3EAB2E51DAA915600D03621 /* main.mm */; };
 		D3EAB2EE1DAA918E00D03621 /* overuse_estimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EAB2EC1DAA918E00D03621 /* overuse_estimator.cpp */; };
 		D3EAB2F11DAA97B500D03621 /* overuse_detector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EAB2EF1DAA97B500D03621 /* overuse_detector.cpp */; };
 /* End PBXBuildFile section */
@@ -26,7 +26,7 @@
 
 /* Begin PBXFileReference section */
 		D3EAB2E21DAA915600D03621 /* WebRTC_QoS */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WebRTC_QoS; sourceTree = BUILT_PRODUCTS_DIR; };
-		D3EAB2E51DAA915600D03621 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D3EAB2E51DAA915600D03621 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		D3EAB2EC1DAA918E00D03621 /* overuse_estimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = overuse_estimator.cpp; sourceTree = "<group>"; };
 		D3EAB2ED1DAA918E00D03621 /* overuse_estimator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = overuse_estimator.hpp; sourceTree = "<group>"; };
 		D3EAB2EF1DAA97B500D03621 /* overuse_detector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = overuse_detector.cpp; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		D3EAB2E41DAA915600D03621 /* WebRTC_QoS */ = {
 			isa = PBXGroup;
 			children = (
-				D3EAB2E51DAA915600D03621 /* main.m */,
+				D3EAB2E51DAA915600D03621 /* main.mm */,
 				D3EAB2EC1DAA918E00D03621 /* overuse_estimator.cpp */,
 				D3EAB2ED1DAA918E00D03621 /* overuse_estimator.hpp */,
 				D3EAB2EF1DAA97B500D03621 /* overuse_detector.cpp */,
@@ -130,7 +130,7 @@
 			files = (
 				D3EAB2EE1DAA918E00D03621 /* overuse_estimator.cpp in Sources */,
 				D3EAB2F11DAA97B500D03621 /* overuse_detector.cpp in Sources */,
-				D3EAB2E61DAA915600D03621 /* main.m in Sources */,
+				D3EAB2E61DAA915600D03621 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
