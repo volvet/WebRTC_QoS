@@ -19,13 +19,7 @@
 #define WEBRTC_MODULES_REMOTE_BITRATE_ESTIMATOR_OVERUSE_ESTIMATOR_H_
 
 #include <list>
-
-#define RTC_DISALLOW_ASSIGN(TypeName) \
-    void operator=(const TypeName &) = delete
-#define RTC_DISALLOW_COPY_AND_ASSIGN(TypeName) \
-    TypeName(const TypeName &) = delete; \
-    RTC_DISALLOW_ASSIGN(TypeName)
-
+#include "Random.hpp"
 
 namespace webrtc {
     
