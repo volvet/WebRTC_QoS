@@ -7,11 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "overuse_detector_test.hpp"
+
+using namespace webrtc;
+
+int QoSTest()
+{
+    NSLog(@"WebRTC QoS Test");
+    OveruseDetectorTest  overuseDetectorTest;
+    
+    NSLog(@"GaussionRandom");
+    overuseDetectorTest.GaussionRandom();
+    
+    NSLog(@"SimpleNonOverUse");
+    overuseDetectorTest.SimpleNonOveruse30fps();
+
+    NSLog(@"Test Done");
+    return 0;
+}
+
+
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        NSLog(@"Hello, World!");
+        QoSTest();
     }
     return 0;
 }
