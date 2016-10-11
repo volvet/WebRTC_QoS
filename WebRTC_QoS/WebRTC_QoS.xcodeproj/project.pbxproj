@@ -11,6 +11,8 @@
 		D3EAB2EE1DAA918E00D03621 /* overuse_estimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EAB2EC1DAA918E00D03621 /* overuse_estimator.cpp */; };
 		D3EAB2F11DAA97B500D03621 /* overuse_detector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EAB2EF1DAA97B500D03621 /* overuse_detector.cpp */; };
 		D3F252991DAC8108001AA7E6 /* Random.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3F252971DAC8108001AA7E6 /* Random.cpp */; };
+		D3F2529C1DAC8459001AA7E6 /* overuse_detector_test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3F2529A1DAC8459001AA7E6 /* overuse_detector_test.cpp */; };
+		D3F2529F1DAC9326001AA7E6 /* inter_arrival.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3F2529D1DAC9326001AA7E6 /* inter_arrival.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,10 @@
 		D3EAB2F01DAA97B500D03621 /* overuse_detector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = overuse_detector.hpp; sourceTree = "<group>"; };
 		D3F252971DAC8108001AA7E6 /* Random.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Random.cpp; sourceTree = "<group>"; };
 		D3F252981DAC8108001AA7E6 /* Random.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Random.hpp; sourceTree = "<group>"; };
+		D3F2529A1DAC8459001AA7E6 /* overuse_detector_test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = overuse_detector_test.cpp; sourceTree = "<group>"; };
+		D3F2529B1DAC8459001AA7E6 /* overuse_detector_test.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = overuse_detector_test.hpp; sourceTree = "<group>"; };
+		D3F2529D1DAC9326001AA7E6 /* inter_arrival.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = inter_arrival.cpp; sourceTree = "<group>"; };
+		D3F2529E1DAC9326001AA7E6 /* inter_arrival.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = inter_arrival.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,10 @@
 				D3EAB2F01DAA97B500D03621 /* overuse_detector.hpp */,
 				D3F252971DAC8108001AA7E6 /* Random.cpp */,
 				D3F252981DAC8108001AA7E6 /* Random.hpp */,
+				D3F2529A1DAC8459001AA7E6 /* overuse_detector_test.cpp */,
+				D3F2529B1DAC8459001AA7E6 /* overuse_detector_test.hpp */,
+				D3F2529D1DAC9326001AA7E6 /* inter_arrival.cpp */,
+				D3F2529E1DAC9326001AA7E6 /* inter_arrival.hpp */,
 			);
 			path = WebRTC_QoS;
 			sourceTree = "<group>";
@@ -133,9 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F2529C1DAC8459001AA7E6 /* overuse_detector_test.cpp in Sources */,
 				D3F252991DAC8108001AA7E6 /* Random.cpp in Sources */,
 				D3EAB2EE1DAA918E00D03621 /* overuse_estimator.cpp in Sources */,
 				D3EAB2F11DAA97B500D03621 /* overuse_detector.cpp in Sources */,
+				D3F2529F1DAC9326001AA7E6 /* inter_arrival.cpp in Sources */,
 				D3EAB2E61DAA915600D03621 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
