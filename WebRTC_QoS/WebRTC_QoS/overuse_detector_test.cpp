@@ -7,11 +7,24 @@
 //
 
 #include <assert.h>
+#include <string>
 #include "overuse_detector_test.hpp"
+
+using namespace std;
 
 namespace webrtc {
 
-const double KRTPTimestampToMS = 1.0/90.0;
+    const double KRTPTimestampToMS = 1.0/90.0;
+    
+    std::string BandwdithState2String(BandwidthUsage state)
+    {
+        if( state == kBwNormal ){
+            return "BW Normal";
+        } else if ( state == kBwOverusing ) {
+            return "BW Overusing";
+        }
+        return "BW Underusning";
+    }
     
     OveruseDetectorTest::OveruseDetectorTest() : mRandom(123456789)
     {
@@ -48,7 +61,7 @@ const double KRTPTimestampToMS = 1.0/90.0;
         
         if( m_pInterArrival->ComputeDeltas(rtp_timestamp, receive_timestamp, packet_size, &timestamp_delta, &arrive_time_delta, &size_delta)) {
             double timestamp_delta_ms = timestamp_delta / 90.0;
-            m_pOveruseEstimator->Update(arrive_time_delta, timestamp_delta, size_delta, m_pOveruseDetector->State());
+            m_pOveruseEstimator->Update(arrive_time_delta, timestamp_delta_ms, size_delta, m_pOveruseDetector->State());
             m_pOveruseDetector->Detect(m_pOveruseEstimator->offset(), timestamp_delta_ms, m_pOveruseEstimator->num_of_deltas(), receive_timestamp);
         }
     }
@@ -82,6 +95,7 @@ const double KRTPTimestampToMS = 1.0/90.0;
             rtp_timestamp += frame_duration_ms * 90;
             
             assert(kBwNormal == m_pOveruseDetector->State());
+            //printf("%s\n", BandwdithState2String(m_pOveruseDetector->State()).c_str());
         }
     }
 }

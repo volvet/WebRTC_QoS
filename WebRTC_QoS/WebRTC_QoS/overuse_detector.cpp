@@ -52,7 +52,7 @@ namespace webrtc {
         //if (experiment_string.length() < kMinExperimentLength)
         //    return false;
         //return experiment_string.substr(0, kDisabledPrefixLength) == kDisabledPrefix;
-        return false;
+        return true;
     }
     
     // Gets thresholds from the experiment name following the format
