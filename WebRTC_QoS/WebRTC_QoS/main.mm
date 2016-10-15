@@ -19,9 +19,12 @@ int QoSTest()
     NSLog(@"GaussionRandom");
     overuseDetectorTest.GaussionRandom();
     
-    NSLog(@"SimpleNonOverUse");
+    NSLog(@"SimpleNonOveruse");
     overuseDetectorTest.SimpleNonOveruse30fps();
-
+    
+    NSLog(@"SimpleNonOveruseWithReceiveVariance");
+    overuseDetectorTest.SimpleNonOveruseWithReceiveVariance();
+    
     NSLog(@"Test Done");
     return 0;
 }

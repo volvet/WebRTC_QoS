@@ -25,6 +25,7 @@ public:
     
     void  GaussionRandom();
     void  SimpleNonOveruse30fps();
+    void  SimpleNonOveruseWithReceiveVariance();
     
 protected:
     void  UpdateDetector(uint32_t rtp_timestamp, int64_t receive_timestamp, size_t packet_size);

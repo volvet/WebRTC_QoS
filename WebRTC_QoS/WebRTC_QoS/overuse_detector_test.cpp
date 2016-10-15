@@ -98,4 +98,23 @@ namespace webrtc {
             //printf("%s\n", BandwdithState2String(m_pOveruseDetector->State()).c_str());
         }
     }
+    
+    void OveruseDetectorTest::SimpleNonOveruseWithReceiveVariance()
+    {
+        size_t packet_size = 1200;
+        uint32_t rtp_timestamp = 10*90;
+        uint32_t frame_duration_ms = 10;
+        
+        for( int i=0;i<1000;i++ ) {
+            UpdateDetector(rtp_timestamp, mNow, packet_size);
+            rtp_timestamp += frame_duration_ms * 90;
+            if( i%2 ){
+                mNow += frame_duration_ms - 5;
+            } else {
+                mNow += frame_duration_ms + 5;
+            }
+            
+            assert(kBwNormal == m_pOveruseDetector->State());
+        }
+    }
 }
