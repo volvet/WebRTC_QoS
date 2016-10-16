@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3A63EF41DB3A0B0005A6929 /* aimd_rate_control.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3A63EF21DB3A0B0005A6929 /* aimd_rate_control.cpp */; };
 		D3EAB2E61DAA915600D03621 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = D3EAB2E51DAA915600D03621 /* main.mm */; };
 		D3EAB2EE1DAA918E00D03621 /* overuse_estimator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EAB2EC1DAA918E00D03621 /* overuse_estimator.cpp */; };
 		D3EAB2F11DAA97B500D03621 /* overuse_detector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3EAB2EF1DAA97B500D03621 /* overuse_detector.cpp */; };
@@ -28,6 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D3A63EF21DB3A0B0005A6929 /* aimd_rate_control.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = aimd_rate_control.cpp; sourceTree = "<group>"; };
+		D3A63EF31DB3A0B0005A6929 /* aimd_rate_control.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = aimd_rate_control.hpp; sourceTree = "<group>"; };
 		D3EAB2E21DAA915600D03621 /* WebRTC_QoS */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WebRTC_QoS; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EAB2E51DAA915600D03621 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		D3EAB2EC1DAA918E00D03621 /* overuse_estimator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = overuse_estimator.cpp; sourceTree = "<group>"; };
@@ -83,6 +86,8 @@
 				D3F2529B1DAC8459001AA7E6 /* overuse_detector_test.hpp */,
 				D3F2529D1DAC9326001AA7E6 /* inter_arrival.cpp */,
 				D3F2529E1DAC9326001AA7E6 /* inter_arrival.hpp */,
+				D3A63EF21DB3A0B0005A6929 /* aimd_rate_control.cpp */,
+				D3A63EF31DB3A0B0005A6929 /* aimd_rate_control.hpp */,
 			);
 			path = WebRTC_QoS;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3A63EF41DB3A0B0005A6929 /* aimd_rate_control.cpp in Sources */,
 				D3F2529C1DAC8459001AA7E6 /* overuse_detector_test.cpp in Sources */,
 				D3F252991DAC8108001AA7E6 /* Random.cpp in Sources */,
 				D3EAB2EE1DAA918E00D03621 /* overuse_estimator.cpp in Sources */,
