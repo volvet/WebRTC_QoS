@@ -19,8 +19,6 @@
 #ifndef WEBRTC_MODULES_REMOTE_BITRATE_ESTIMATOR_AIMD_RATE_CONTROL_H_
 #define WEBRTC_MODULES_REMOTE_BITRATE_ESTIMATOR_AIMD_RATE_CONTROL_H_
 
-//#include "webrtc/base/constructormagic.h"
-//#include "webrtc/modules/remote_bitrate_estimator/include/bwe_defines.h"
 #include <stdint.h>
 #include "overuse_detector.hpp"
 

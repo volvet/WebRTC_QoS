@@ -18,16 +18,10 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
-//#include "webrtc/modules/remote_bitrate_estimator/aimd_rate_control.h"
-
 #include <algorithm>
 #include <cassert>
 #include <cmath>
 
-//#include "webrtc/base/checks.h"
-//#include "webrtc/modules/remote_bitrate_estimator/overuse_detector.h"
-//#include "webrtc/modules/remote_bitrate_estimator/include/remote_bitrate_estimator.h"
-//#include "webrtc/modules/remote_bitrate_estimator/test/bwe_test_logging.h"
 
 namespace webrtc {
     
