@@ -79,8 +79,9 @@ namespace webrtc {
             }
         }
         for( int i=0;i<MAX_BUCKET_SIZE;i++ ){
-            printf("Bucket i:%d, %d\n", i, buckets[i]);
+            printf("Bucket i:%d, %d ", i, buckets[i]);
         }
+        printf("\n");
     }
     
     void OveruseDetectorTest::SimpleNonOveruse30fps()
@@ -112,6 +113,24 @@ namespace webrtc {
                 mNow += frame_duration_ms - 5;
             } else {
                 mNow += frame_duration_ms + 5;
+            }
+            
+            assert(kBwNormal == m_pOveruseDetector->State());
+        }
+    }
+    
+    void OveruseDetectorTest::SimpleNonOveruseWithRtpTimevariance() {
+        uint32_t frame_duration_ms = 10;
+        uint32_t rtp_timestamp = 10*90;
+        size_t packet_size = 1200;
+        
+        for( int i=0;i<1000;i++ ) {
+            UpdateDetector(rtp_timestamp, mNow, packet_size);
+            mNow += frame_duration_ms;
+            if( i % 2 ){
+                rtp_timestamp += (frame_duration_ms - 5)*90;
+            } else {
+                rtp_timestamp += (frame_duration_ms + 5)*90;
             }
             
             assert(kBwNormal == m_pOveruseDetector->State());

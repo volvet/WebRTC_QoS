@@ -25,6 +25,9 @@ int QoSTest()
     NSLog(@"SimpleNonOveruseWithReceiveVariance");
     overuseDetectorTest.SimpleNonOveruseWithReceiveVariance();
     
+    NSLog(@"SimpleNonOveruseWithRtpTimevariance");
+    overuseDetectorTest.SimpleNonOveruseWithRtpTimevariance();
+    
     NSLog(@"Test Done");
     return 0;
 }
