@@ -99,7 +99,7 @@ namespace webrtc {
             }
             
             mRTPTimestamp += mean_ms * 90;
-            mNow += mean_ms*2; //+ drift_per_frame_ms;
+            mNow += mean_ms + drift_per_frame_ms;
             mReceiveTimestamp = std::max<int64_t>(
                 mReceiveTimestamp, mNow + static_cast<int64_t>(mRandom.Gaussian(0, standard_deviation_ms) + 0.5)
             );
