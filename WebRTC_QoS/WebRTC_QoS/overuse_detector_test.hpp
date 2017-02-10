@@ -27,9 +27,12 @@ public:
     void  SimpleNonOveruse30fps();
     void  SimpleNonOveruseWithReceiveVariance();
     void  SimpleNonOveruseWithRtpTimevariance();
+    void  SimpleOveruse2000kbit30fps();
     
 protected:
     void  UpdateDetector(uint32_t rtp_timestamp, int64_t receive_timestamp, size_t packet_size);
+    int   Run100000Samples(int packets_per_frame, size_t packet_size, int mean_ms, int standard_deviation_ms);
+    int   RunUntilOveruse(int packets_per_frame, size_t packet_size, int mean_ms, int standard_deviation_ms, int drift_per_frame_ms);
     
 private:
     int64_t      mNow;

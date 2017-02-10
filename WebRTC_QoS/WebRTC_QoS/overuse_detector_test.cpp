@@ -66,6 +66,50 @@ namespace webrtc {
         }
     }
     
+    int OveruseDetectorTest::Run100000Samples(int packets_per_frame, size_t packet_size, int mean_ms, int standard_deviation_ms) {
+        int unique_overuse = 0;
+        int last_overuse = -1;
+        
+        for( int i=0;i<1000000;i++ ){
+            for( int j=0;j<packets_per_frame;j++ ){
+                UpdateDetector(mRTPTimestamp, mReceiveTimestamp, packet_size);
+            }
+            
+            mRTPTimestamp += mean_ms * 90;
+            mNow += mean_ms;
+            mReceiveTimestamp = std::max<int64_t>(
+                mReceiveTimestamp, mNow + static_cast<int64_t>(mRandom.Gaussian(0, standard_deviation_ms) + 0.5)
+            );
+            if( kBwOverusing == m_pOveruseDetector->State() ){
+                if( last_overuse + 1 != i ){
+                    unique_overuse ++;
+                }
+            }
+        }
+        
+        return unique_overuse;
+    }
+    
+    int OveruseDetectorTest::RunUntilOveruse(int packets_per_frame, size_t packet_size, int mean_ms, int standard_deviation_ms, int drift_per_frame_ms) {
+        for(int i=0;i<1000;i++ ){
+            for( int j=0;j<packets_per_frame;j++ ){
+                UpdateDetector(mRTPTimestamp, mReceiveTimestamp, packet_size);
+            }
+            
+            mRTPTimestamp += mean_ms * 90;
+            mNow += mean_ms + drift_per_frame_ms;
+            mReceiveTimestamp = std::max<int64_t>(
+                mReceiveTimestamp, mNow + static_cast<int64_t>(mRandom.Gaussian(0, standard_deviation_ms) + 0.5)
+            );
+            if( kBwOverusing == m_pOveruseDetector->State() ){
+                return i+1;
+            }
+        }
+        
+        return -1;
+    }
+    
+    
     void OveruseDetectorTest::GaussionRandom()
     {
         const static int MAX_BUCKET_SIZE = 100;
@@ -136,4 +180,11 @@ namespace webrtc {
             assert(kBwNormal == m_pOveruseDetector->State());
         }
     }
+    
+    void OveruseDetectorTest::SimpleOveruse2000kbit30fps() {
+        
+    }
+    
+    
+    
 }
