@@ -33,6 +33,8 @@ namespace webrtc {
         m_pOveruseEstimator = new OveruseEstimator(options);
         m_pOveruseDetector = new OveruseDetector(options);
         mNow = 0;
+        mReceiveTimestamp = 0;
+        mRTPTimestamp = 0;
     }
     
     OveruseDetectorTest::~OveruseDetectorTest()
@@ -97,13 +99,14 @@ namespace webrtc {
             }
             
             mRTPTimestamp += mean_ms * 90;
-            mNow += mean_ms + drift_per_frame_ms;
+            mNow += mean_ms*2; //+ drift_per_frame_ms;
             mReceiveTimestamp = std::max<int64_t>(
                 mReceiveTimestamp, mNow + static_cast<int64_t>(mRandom.Gaussian(0, standard_deviation_ms) + 0.5)
             );
             if( kBwOverusing == m_pOveruseDetector->State() ){
                 return i+1;
             }
+            //printf("%s\n", BandwdithState2String(m_pOveruseDetector->State()).c_str());
         }
         
         return -1;
@@ -182,7 +185,19 @@ namespace webrtc {
     }
     
     void OveruseDetectorTest::SimpleOveruse2000kbit30fps() {
+        size_t packet_size = 1200;
+        int packets_per_frame = 6;
+        int frame_duration_ms = 33;
+        int drift_per_frame_ms = 1;
+        int sigma_ms = 0;
+        int unique_overuse = Run100000Samples(packets_per_frame, packet_size, frame_duration_ms, sigma_ms);
         
+        assert( 0 == unique_overuse );
+        int frames_until_overuse = RunUntilOveruse(packets_per_frame, packet_size, frame_duration_ms, sigma_ms, drift_per_frame_ms);
+        
+        printf("frames_until_overuse = %d\n", frames_until_overuse);
+        
+        assert( -1 != frames_until_overuse);
     }
     
     

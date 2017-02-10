@@ -28,6 +28,9 @@ int QoSTest()
     NSLog(@"SimpleNonOveruseWithRtpTimevariance");
     overuseDetectorTest.SimpleNonOveruseWithRtpTimevariance();
     
+    NSLog(@"SimpleOveruse2000kbit30fps");
+    overuseDetectorTest.SimpleOveruse2000kbit30fps();
+    
     NSLog(@"Test Done");
     return 0;
 }
